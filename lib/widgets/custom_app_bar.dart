@@ -6,7 +6,8 @@ class CustomAppBar extends StatelessWidget {
   final IconData rightIcon;
   final Function? leftCallback;
 
-  CustomAppBar(this.leftIcon, this.rightIcon, {this.leftCallback})
+  CustomAppBar(this.leftIcon, this.rightIcon, {this.leftCallback});
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,17 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(16, 8, 8, 8),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
+          GestureDetector(
+            onTap: leftCallback is null ? () => leftCallback!() : null,
+            child: _buildIcon(),
+            Container(
+              padding: EdgeInsets.fromLTRB(16, 8, 8, 8),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+              ),
+              child: Icon(leftIcon),
             ),
-            child: Icon(leftIcon),
           ),
           Container(
             padding: EdgeInsets.all(8),
@@ -38,5 +43,16 @@ class CustomAppBar extends StatelessWidget {
         ],
       ),
     );
+  }
+  Widget _buildIcon(IconData icon) {
+    return Container (
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+      ),
+      child: Icon(leftIcon),
+    );
+    
   }
 }
