@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/restaurant.dart';
 
 class RestaurantInfo extends StatelessWidget {
@@ -55,14 +56,43 @@ class RestaurantInfo extends StatelessWidget {
                             color: Colors.grey.withOpacity(0.4)
                           )
                         ),
-                      ]
-                    )
-                  ]
+                      ],
+                    ),
+                  ],
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(50),
+                  child: Image.asset(restaurant.logoUrl, width:80),
                 )
+              ],
+            ),
+            SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('"${restaurant.description}"',
+                  style: TextStyle(
+                    fontSize: 16
+                  )
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.star_outlined,
+                      color:kPrimaryColor
+                    ),
+                    Text('${restaurant.score}',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      )
+                    ),
+                    SizedBox(width:15),
+                  ]
+                ),
               ]
             )
-          ]
-      )
+          ],
+      ),
     );
   }
 }
