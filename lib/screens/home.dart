@@ -20,7 +20,10 @@ class _HomePageState extends State<HomePage> {
       body: Column (
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar()
+          CustomAppBar(
+            Icons.arrow_back_ios_outlined,
+            Icons.search_outlined
+          )
         ],
       ),
     );

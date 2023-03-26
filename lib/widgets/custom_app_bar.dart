@@ -21,16 +21,16 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GestureDetector(
-            onTap: leftCallback is null ? () => leftCallback!() : null,
-            child: _buildIcon(),
-            Container(
-              padding: EdgeInsets.fromLTRB(16, 8, 8, 8),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: Icon(leftIcon),
+            onTap: leftCallback != null ? () => leftCallback!() : null,
+            child: _buildIcon(leftIcon)
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(16, 8, 8, 8),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
             ),
+            child: Icon(leftIcon),
           ),
           Container(
             padding: EdgeInsets.all(8),
@@ -53,6 +53,6 @@ class CustomAppBar extends StatelessWidget {
       ),
       child: Icon(leftIcon),
     );
-    
+
   }
 }
