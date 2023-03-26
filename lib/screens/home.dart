@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/widgets/restaurant_info.dart';
 
 import '../widgets/custom_app_bar.dart';
 
@@ -23,7 +24,8 @@ class _HomePageState extends State<HomePage> {
           CustomAppBar(
             Icons.arrow_back_ios_outlined,
             Icons.search_outlined
-          )
+          ),
+          RestaurantInfo(),
         ],
       ),
     );
