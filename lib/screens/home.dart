@@ -4,6 +4,7 @@ import 'package:food_delivery_app/models/restaurant.dart';
 import 'package:food_delivery_app/widgets/food_list.dart';
 import 'package:food_delivery_app/widgets/food_list_view.dart';
 import 'package:food_delivery_app/widgets/restaurant_info.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../widgets/custom_app_bar.dart';
 
