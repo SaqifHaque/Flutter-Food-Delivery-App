@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/food.dart';
+import 'package:food_delivery_app/widgets/custom_app_bar.dart';
 
 class DetailPage extends StatelessWidget {
   final Food food;
@@ -8,8 +10,15 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-
+      backgroundColor: kPrimaryColor,
+      body: SingleChildScrollView(
+        child: Column(children: [
+          CustomAppBar(
+            Icons.arrow_back_ios_outlined,
+            Icons.favorite_outline,
+            leftCallback: () => Navigator.of(context).pop(),
+          )
+        ])
       )
     );
   }
