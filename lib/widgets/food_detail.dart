@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
+import 'package:food_delivery_app/models/food.dart';
 
 class FoodDetail extends StatelessWidget {
   final Food food;
@@ -20,16 +22,43 @@ class FoodDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildIconText()
+              _buildIconText(
+                Icons.access_time_outlined,
+                Colors.blue,
+                food.waitTime
+              ),
+              _buildIconText(
+                  Icons.star_outline,
+                  Colors.amber,
+                  food.score.toString()
+              ),
+              _buildIconText(
+                  Icons.local_fire_department_outlined,
+                  Colors.red,
+                  food.cal
+              ),
             ],
           )
         ],
       )
-    )
+    );
   }
 
-  Widget _buildIconText() {
-    
+  Widget _buildIconText(IconData icon, Color color, String text) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          color: color,
+          size: 20
+        ),
+        Text(text,
+        style: TextStyle(
+          fontSize: 16,
+
+        ))
+      ]
+    );
   }
 }
 
