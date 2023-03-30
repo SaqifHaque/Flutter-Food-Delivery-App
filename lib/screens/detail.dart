@@ -41,6 +41,19 @@ class DetailPage extends StatelessWidget {
               color: Colors.black,
               size:30
               ),
+              Container(
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: Text(food.quantity.toString(),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold
+                )),
+              )
             ],
           ),
           onPressed: () {},
