@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/constants/colors.dart';
 import 'package:food_delivery_app/models/food.dart';
+import 'package:food_delivery_app/widgets/food_quantity.dart';
 
 class FoodDetail extends StatelessWidget {
   final Food food;
@@ -38,7 +39,10 @@ class FoodDetail extends StatelessWidget {
                   food.cal
               ),
             ],
-          )
+          ),
+          SizedBox(height:30),
+          FoodQuantity(food),
+
         ],
       )
     );
