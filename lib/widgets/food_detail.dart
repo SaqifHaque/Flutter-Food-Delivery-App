@@ -59,11 +59,40 @@ class FoodDetail extends StatelessWidget {
             height:100,
             child:ListView.separated(
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => Text('as'),
+              itemBuilder: (context, index) => Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color:Colors.white,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Column(
+                  children: [
+                    Image.asset(food.ingredients[index].values.first, width: 52),
+                    Text(food.ingredients[index].keys.first),
+                  ]
+                )
+              ),
               separatorBuilder: (_, index) => SizedBox(width: 15),
               itemCount: food.ingredients.length,
             )
-          )
+          ),
+          SizedBox(height: 30),
+          Row(
+            children: [
+              Text('About',
+              style:TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ))
+            ]
+          ),
+          SizedBox(height: 10),
+          Text(food.about,
+          style: TextStyle(
+            wordSpacing: 1.2,
+            height: 1.5,
+            fontSize: 16,
+          ))
         ],
       )
     );
